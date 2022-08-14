@@ -1,0 +1,27 @@
+{
+  "name": "mocha-chai-unit-testing-node-js-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha 'test'",
+    "single": "mocha",
+    "test-report": "mocha 'test' --reporter mochawesome --require mochawesome/register"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "mongoose": "^6.5.2",
+    "nodemon": "^2.0.19"
+  },
+  "devDependencies": {
+    "chai": "^4.3.6",
+    "mocha": "^10.0.0",
+    "mochawesome": "^7.1.3"
+  }
+}
