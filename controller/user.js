@@ -1,4 +1,4 @@
-const AWS = require("aws-sdk/client-ses");
+const AWS = require("@aws-sdk/client-ses");
 const User = require("../model/User");
 
 
