@@ -19,8 +19,6 @@ app.use("/api",require("./router/user"));
 
 
 
-
-
 app.listen(portnum, (req,res)=>{
     console.log("Server connected");
 })
