@@ -4,6 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "test": "mocha 'test'",
     "single": "mocha",
     "test-report": "mocha 'test' --reporter mochawesome --require mochawesome/register"

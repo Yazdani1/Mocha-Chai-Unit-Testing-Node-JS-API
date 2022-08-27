@@ -48,32 +48,4 @@ describe("Get User Info", function () {
   });
 });
 
-// describe("Check two numbers",function(){
 
-//     it("Match two numbers",()=>{
-
-//         let first = 10;
-//         let second =10;
-
-//         expect(first).to.be.equal(second);
-
-//     });
-
-//     it("Should not Match two numbers",()=>{
-
-//         let first = 20;
-//         let second =50;
-
-//         expect(first).not.to.be.equal(second);
-
-//     });
-
-//     it("Should have matching name ",()=>{
-
-//         let name = "Yaz"
-
-//         expect(name).to.be.equal("Yaz");
-
-//     });
-
-// })
