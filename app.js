@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const PORT = process.env.PORT || 8080;
+const portnum = process.env.PORT || 8080;
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
@@ -21,6 +21,6 @@ app.use("/api",require("./router/user"));
 
 
 
-app.listen(PORT, (req,res)=>{
+app.listen(portnum, (req,res)=>{
     console.log("Server connected");
 })
