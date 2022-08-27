@@ -24,6 +24,4 @@ router.delete("/deleteuser/:id",deleteUser);
 
 
 
-
-
 module.exports = router;
