@@ -1,4 +1,20 @@
+const AWS = require("aws-sdk");
 const User = require("../model/User");
+
+
+require("dotenv").config();
+
+const awsConfig = {
+  accessKeyId: process.env.AWS_ACCESS_KEY_ID_INFO,
+  secretAccessKey: process.env.AWS_SECRET_ACCESS_kEY_INFO,
+  region: process.env.AWS_REGION_INFO,
+  apiVersion: process.env.AWS_API_VERSION_INFO,
+  correctClockSkew: true
+  
+};
+
+const SES = new AWS.SES(awsConfig);
+
 
 // to create user
 
@@ -24,6 +40,35 @@ exports.postUserInfo = async (req, res) => {
       email,
       age,
     });
+
+
+    const params = {
+      Source: process.env.EMAIL_FROM_INFO,
+      Destination: {
+        ToAddresses: [process.env.EMAIL_FROM_INFO],
+      },
+      ReplyToAddresses: [email],
+      Message: {
+        Body: {
+          Html: {
+            Charset: "UTF-8",
+            Data: `
+              <html>
+                <h1 style={{color:"red"}}>Message from Typescript App</h1>
+                <p>Visit the website</p>
+              </html>
+              `,
+          },
+        },
+        Subject: {
+          Charset: "UTF-8",
+          Data: "Welcome Your Name is: "+name,
+        },
+      },
+    };
+
+    const emailSent = SES.sendEmail(params).promise();
+    
 
     const userPostResult = await User.create(userinfo);
 
